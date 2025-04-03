@@ -1,10 +1,10 @@
 {
   "expo": {
     "name": "Movie Mates",
-    "slug": "DoneWithIt",
+    "slug": "MovieMates",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.png",
+    "icon": "./assets/images/movieMateLogo.png",
     "scheme": "movies",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,21 +13,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage":  "./assets/images/movieMateLogo.png",
         "backgroundColor": "#030014"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/logo.png"
+      "favicon":  "./assets/images/movieMateLogo.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/logo.png",
+          "image":  "./assets/images/movieMateLogo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#030014"

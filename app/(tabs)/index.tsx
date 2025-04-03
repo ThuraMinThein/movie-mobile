@@ -1,8 +1,6 @@
-import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "react-native";
-import { useRouter } from "expo-router";
 import { fetchMovies } from "@/services/api";
 import useFetch from "@/services/useFetch";
 import MovieCard from "@/components/MovieCard";
@@ -10,8 +8,6 @@ import { getTrendingMovies } from "@/components/appwrite";
 import TrendingCard from "@/components/TrendingCard";
 
 export default function Index() {
-
-  const router = useRouter();
 
   const {
     data: trendingMovie,
@@ -30,7 +26,7 @@ export default function Index() {
       <Image source={images.bg} className="absolute w-full z-0" />
 
       <ScrollView className="flex-1 px-5" showsVerticalScrollIndicator={false} contentContainerStyle={{ minHeight: "100%", paddingBottom: 10 }}>
-        <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
+        <Image source={icons.logo} className="w-[96px] h-[38.71px] mt-20 mb-5 mx-auto" />
 
         {moviesLoading || trendingLoading ? (
           <ActivityIndicator
@@ -42,10 +38,6 @@ export default function Index() {
           <Text> Error: {moviesError?.message || trendingError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
-            {/* <SearchBar
-              onPress={() => router.push("/search")}
-              placeholder="Search for a movie"
-            /> */}
             <>
               {trendingMovie && (
                 <>
