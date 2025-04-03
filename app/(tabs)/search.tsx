@@ -1,3 +1,4 @@
+import { updateSearchCount } from "@/components/appwrite";
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
@@ -29,7 +30,12 @@ const Search = () => {
         }, 500);
 
         return () => clearTimeout(timeoutId);
-    }, [search])
+    }, [search]);
+
+    useEffect(() => {
+        if (movies?.length > 0 && movies?.[0])
+            updateSearchCount(search, movies[0]);
+    }, [movies]);
 
     return (
         <View className="flex-1 bg-primary">
@@ -69,7 +75,7 @@ const Search = () => {
                                 <Text className="text-center text-gray-500">
                                     No Internet Detected
                                 </Text>
-                            ) :
+                            ) : error &&
                             (
                                 <Text className="text-red-500 px-5 my-3">
                                     Error: {error?.message}
